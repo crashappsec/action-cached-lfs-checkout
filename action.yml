@@ -7,97 +7,97 @@ branding:
   color: "green"
 
 inputs:
-  # include:
-  #   description: "Explicitly include files for LFS"
-  #   required: false
-  #   default: "*"
-  # exclude:
-  #   description: "Explicitly exclude files for LFS"
-  #   required: false
-  #   default: ""
+  include:
+    description: "Explicitly include files for LFS"
+    required: false
+    default: "*"
+  exclude:
+    description: "Explicitly exclude files for LFS"
+    required: false
+    default: ""
 
-  # app-id:
-  #   description: "GitHub App ID to generate token"
-  #   required: false
-  # private-key:
-  #   description: "GitHub App private key to generate token"
-  #   required: false
+  app-id:
+    description: "GitHub App ID to generate token"
+    required: false
+  private-key:
+    description: "GitHub App private key to generate token"
+    required: false
 
-  # # rest of inputs are direct copy from checkout@v3
-  # repository:
-  #   description: "Repository name with owner. For example, actions/checkout"
-  #   default: ${{ github.repository }}
-  # ref:
-  #   description: >
-  #     The branch, tag or SHA to checkout. When checking out the repository that
-  #     triggered a workflow, this defaults to the reference or SHA for that
-  #     event.  Otherwise, uses the default branch.
-  # token:
-  #   description: >
-  #     Personal access token (PAT) used to fetch the repository. The PAT is configured
-  #     with the local git config, which enables your scripts to run authenticated git
-  #     commands. The post-job step removes the PAT.
-
-
-  #     We recommend using a service account with the least permissions necessary.
-  #     Also when generating a new PAT, select the least scopes necessary.
+  # rest of inputs are direct copy from checkout@v3
+  repository:
+    description: "Repository name with owner. For example, actions/checkout"
+    default: ${{ github.repository }}
+  ref:
+    description: >
+      The branch, tag or SHA to checkout. When checking out the repository that
+      triggered a workflow, this defaults to the reference or SHA for that
+      event.  Otherwise, uses the default branch.
+  token:
+    description: >
+      Personal access token (PAT) used to fetch the repository. The PAT is configured
+      with the local git config, which enables your scripts to run authenticated git
+      commands. The post-job step removes the PAT.
 
 
-  #     [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
-  #   default: ${{ github.token }}
-  # ssh-key:
-  #   description: >
-  #     SSH key used to fetch the repository. The SSH key is configured with the local
-  #     git config, which enables your scripts to run authenticated git commands.
-  #     The post-job step removes the SSH key.
+      We recommend using a service account with the least permissions necessary.
+      Also when generating a new PAT, select the least scopes necessary.
 
 
-  #     We recommend using a service account with the least permissions necessary.
+      [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
+    default: ${{ github.token }}
+  ssh-key:
+    description: >
+      SSH key used to fetch the repository. The SSH key is configured with the local
+      git config, which enables your scripts to run authenticated git commands.
+      The post-job step removes the SSH key.
 
 
-  #     [Learn more about creating and using
-  #     encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
-  # ssh-known-hosts:
-  #   description: >
-  #     Known hosts in addition to the user and global host key database. The public
-  #     SSH keys for a host may be obtained using the utility `ssh-keyscan`. For example,
-  #     `ssh-keyscan github.com`. The public key for github.com is always implicitly added.
-  # ssh-strict:
-  #   description: >
-  #     Whether to perform strict host key checking. When true, adds the options `StrictHostKeyChecking=yes`
-  #     and `CheckHostIP=no` to the SSH command line. Use the input `ssh-known-hosts` to
-  #     configure additional hosts.
-  #   default: true
-  # persist-credentials:
-  #   description: "Whether to configure the token or SSH key with the local git config"
-  #   default: true
-  # path:
-  #   description: "Relative path under $GITHUB_WORKSPACE to place the repository"
-  #   default: .
-  # clean:
-  #   description: "Whether to execute `git clean -ffdx && git reset --hard HEAD` before fetching"
-  #   default: true
-  # fetch-depth:
-  #   description: "Number of commits to fetch. 0 indicates all history for all branches and tags."
-  #   default: 1
-  # lfs:
-  #   description: "Whether to download Git-LFS files"
-  #   default: true
-  # submodules:
-  #   description: >
-  #     Whether to checkout submodules: `true` to checkout submodules or `recursive` to
-  #     recursively checkout submodules.
+      We recommend using a service account with the least permissions necessary.
 
 
-  #     When the `ssh-key` input is not provided, SSH URLs beginning with `git@github.com:` are
-  #     converted to HTTPS.
-  #   default: false
-  # set-safe-directory:
-  #   description: Add repository path as safe.directory for Git global config by running `git config --global --add safe.directory <path>`
-  #   default: true
-  # github-server-url:
-  #   description: The base URL for the GitHub instance that you are trying to clone from, will use environment defaults to fetch from the same instance that the workflow is running from unless specified. Example URLs are https://github.com or https://my-ghes-server.example.com
-  #   required: false
+      [Learn more about creating and using
+      encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
+  ssh-known-hosts:
+    description: >
+      Known hosts in addition to the user and global host key database. The public
+      SSH keys for a host may be obtained using the utility `ssh-keyscan`. For example,
+      `ssh-keyscan github.com`. The public key for github.com is always implicitly added.
+  ssh-strict:
+    description: >
+      Whether to perform strict host key checking. When true, adds the options `StrictHostKeyChecking=yes`
+      and `CheckHostIP=no` to the SSH command line. Use the input `ssh-known-hosts` to
+      configure additional hosts.
+    default: true
+  persist-credentials:
+    description: "Whether to configure the token or SSH key with the local git config"
+    default: true
+  path:
+    description: "Relative path under $GITHUB_WORKSPACE to place the repository"
+    default: .
+  clean:
+    description: "Whether to execute `git clean -ffdx && git reset --hard HEAD` before fetching"
+    default: true
+  fetch-depth:
+    description: "Number of commits to fetch. 0 indicates all history for all branches and tags."
+    default: 1
+  lfs:
+    description: "Whether to download Git-LFS files"
+    default: true
+  submodules:
+    description: >
+      Whether to checkout submodules: `true` to checkout submodules or `recursive` to
+      recursively checkout submodules.
+
+
+      When the `ssh-key` input is not provided, SSH URLs beginning with `git@github.com:` are
+      converted to HTTPS.
+    default: false
+  set-safe-directory:
+    description: Add repository path as safe.directory for Git global config by running `git config --global --add safe.directory <path>`
+    default: true
+  github-server-url:
+    description: The base URL for the GitHub instance that you are trying to clone from, will use environment defaults to fetch from the same instance that the workflow is running from unless specified. Example URLs are https://github.com or https://my-ghes-server.example.com
+    required: false
   observe:
     description: Enable build observables for any of the subsequent steps in this build
     required: false
@@ -116,94 +116,94 @@ runs:
       if: inputs.observe && runner.os == 'Linux'
       uses: crashappsec/buildobserver@vatlidak/cplugin
 
-    # - name: Generate org-level access token
-    #   if: inputs.app-id && inputs.private-key
-    #   id: org-token
-    #   uses: crashappsec/action-github-app-token@main
-    #   with:
-    #     app_id: ${{ inputs.app-id }}
-    #     private_key: ${{ inputs.private-key }}
+    - name: Generate org-level access token
+      if: inputs.app-id && inputs.private-key
+      id: org-token
+      uses: crashappsec/action-github-app-token@main
+      with:
+        app_id: ${{ inputs.app-id }}
+        private_key: ${{ inputs.private-key }}
 
-    # - name: Checkout code
-    #   uses: actions/checkout@v4.1.7
-    #   with:
-    #     repository: ${{ inputs.repository }}
-    #     ref: ${{ inputs.ref }}
-    #     token: ${{ steps.org-token.outputs.token || inputs.token }}
-    #     ssh-key: ${{ inputs.ssh-key }}
-    #     ssh-known-hosts: ${{ inputs.ssh-known-hosts }}
-    #     ssh-strict: ${{ inputs.ssh-strict }}
-    #     persist-credentials: ${{ inputs.persist-credentials }}
-    #     path: ${{ inputs.path }}
-    #     clean: ${{ inputs.clean }}
-    #     fetch-depth: ${{ inputs.fetch-depth }}
-    #     submodules: ${{ inputs.submodules }}
-    #     set-safe-directory: ${{ inputs.set-safe-directory }}
-    #     github-server-url: ${{ inputs.github-server-url }}
+    - name: Checkout code
+      uses: actions/checkout@v4.1.7
+      with:
+        repository: ${{ inputs.repository }}
+        ref: ${{ inputs.ref }}
+        token: ${{ steps.org-token.outputs.token || inputs.token }}
+        ssh-key: ${{ inputs.ssh-key }}
+        ssh-known-hosts: ${{ inputs.ssh-known-hosts }}
+        ssh-strict: ${{ inputs.ssh-strict }}
+        persist-credentials: ${{ inputs.persist-credentials }}
+        path: ${{ inputs.path }}
+        clean: ${{ inputs.clean }}
+        fetch-depth: ${{ inputs.fetch-depth }}
+        submodules: ${{ inputs.submodules }}
+        set-safe-directory: ${{ inputs.set-safe-directory }}
+        github-server-url: ${{ inputs.github-server-url }}
 
-    # - name: Detect LFS
-    #   if: inputs.lfs
-    #   id: lfs
-    #   shell: bash
-    #   working-directory: ${{ inputs.path }}
-    #   run: |
-    #     if grep lfs .gitattributes &> /dev/null; then
-    #       echo "is_present=true" >> $GITHUB_OUTPUT
-    #     else
-    #       echo "is_present=false" >> $GITHUB_OUTPUT
-    #     fi
+    - name: Detect LFS
+      if: inputs.lfs
+      id: lfs
+      shell: bash
+      working-directory: ${{ inputs.path }}
+      run: |
+        if grep lfs .gitattributes &> /dev/null; then
+          echo "is_present=true" >> $GITHUB_OUTPUT
+        else
+          echo "is_present=false" >> $GITHUB_OUTPUT
+        fi
 
-    # - name: Create LFS file list
-    #   if: steps.lfs.outputs.is_present
-    #   shell: bash
-    #   working-directory: ${{ inputs.path }}
-    #   run: |
-    #     git lfs ls-files --long --include  "${{ inputs.include }}" --exclude  "${{ inputs.exclude }}" | cut -d ' ' -f1 > .lfs-assets-id-unsorted
-    #     git submodule foreach git lfs ls-files --long --include  "${{ inputs.include }}" --exclude  "${{ inputs.exclude }}" | cut -d ' ' -f1 >> .lfs-assets-id-unsorted
-    #     cat .lfs-assets-id-unsorted | sort > .lfs-assets-id
-    #     echo "LFS assets ids"
-    #     cat .lfs-assets-id
+    - name: Create LFS file list
+      if: steps.lfs.outputs.is_present
+      shell: bash
+      working-directory: ${{ inputs.path }}
+      run: |
+        git lfs ls-files --long --include  "${{ inputs.include }}" --exclude  "${{ inputs.exclude }}" | cut -d ' ' -f1 > .lfs-assets-id-unsorted
+        git submodule foreach git lfs ls-files --long --include  "${{ inputs.include }}" --exclude  "${{ inputs.exclude }}" | cut -d ' ' -f1 >> .lfs-assets-id-unsorted
+        cat .lfs-assets-id-unsorted | sort > .lfs-assets-id
+        echo "LFS assets ids"
+        cat .lfs-assets-id
 
-    # - name: Create Submodule LFS Cache Paths
-    #   if: steps.lfs.outputs.is_present
-    #   id: cache-paths
-    #   shell: bash
-    #   working-directory: ${{ inputs.path }}
-    #   run: |
-    #     CACHE_PATHS=""
+    - name: Create Submodule LFS Cache Paths
+      if: steps.lfs.outputs.is_present
+      id: cache-paths
+      shell: bash
+      working-directory: ${{ inputs.path }}
+      run: |
+        CACHE_PATHS=""
 
-    #     # loop over the git submodule paths to generate a list of module directories to cache
-    #     # `git config` is used to extract the `path` value for each git submodule
-    #     # for more information about the .gitmodules file, see: https://git-scm.com/docs/gitmodules
-    #     while read line; do
-    #       CACHE_PATHS+="${{ inputs.path }}/.git/modules/$line/lfs "
-    #     done < <(git config --file .gitmodules --get-regexp path | awk '{ print $2 }')
+        # loop over the git submodule paths to generate a list of module directories to cache
+        # `git config` is used to extract the `path` value for each git submodule
+        # for more information about the .gitmodules file, see: https://git-scm.com/docs/gitmodules
+        while read line; do
+          CACHE_PATHS+="${{ inputs.path }}/.git/modules/$line/lfs "
+        done < <(git config --file .gitmodules --get-regexp path | awk '{ print $2 }')
 
-    #     echo "CACHE_PATHS=$CACHE_PATHS" >> $GITHUB_OUTPUT
+        echo "CACHE_PATHS=$CACHE_PATHS" >> $GITHUB_OUTPUT
 
-    # - name: Restore LFS cache
-    #   if: steps.lfs.outputs.is_present
-    #   uses: actions/cache@v3
-    #   id: lfs-cache
-    #   with:
-    #     path: |
-    #       ${{ inputs.path }}/.git/lfs
-    #       ${{ steps.cache-paths.outputs.CACHE_PATHS }}
-    #     key: lfs-${{ hashFiles(format('{0}/{1}', inputs.path, '.lfs-assets-id')) }}-v2
+    - name: Restore LFS cache
+      if: steps.lfs.outputs.is_present
+      uses: actions/cache@v3
+      id: lfs-cache
+      with:
+        path: |
+          ${{ inputs.path }}/.git/lfs
+          ${{ steps.cache-paths.outputs.CACHE_PATHS }}
+        key: lfs-${{ hashFiles(format('{0}/{1}', inputs.path, '.lfs-assets-id')) }}-v2
 
-    # - name: Git LFS Pull
-    #   if: steps.lfs.outputs.is_present
-    #   shell: bash
-    #   working-directory: ${{ inputs.path }}
-    #   run: |
-    #     git lfs pull --include  "${{ inputs.include }}" --exclude  "${{ inputs.exclude }}"
-    #     git submodule foreach git lfs pull --include  "${{ inputs.include }}" --exclude  "${{ inputs.exclude }}"
+    - name: Git LFS Pull
+      if: steps.lfs.outputs.is_present
+      shell: bash
+      working-directory: ${{ inputs.path }}
+      run: |
+        git lfs pull --include  "${{ inputs.include }}" --exclude  "${{ inputs.exclude }}"
+        git submodule foreach git lfs pull --include  "${{ inputs.include }}" --exclude  "${{ inputs.exclude }}"
 
-    # # Don't leave behind temp files in case build system checks for dirty workspace
-    # - name: Cleanup Temp Files
-    #   if: steps.lfs.outputs.is_present
-    #   shell: bash
-    #   working-directory: ${{ inputs.path }}
-    #   run: |
-    #     rm .lfs-assets-id-unsorted
-    #     rm .lfs-assets-id
+    # Don't leave behind temp files in case build system checks for dirty workspace
+    - name: Cleanup Temp Files
+      if: steps.lfs.outputs.is_present
+      shell: bash
+      working-directory: ${{ inputs.path }}
+      run: |
+        rm .lfs-assets-id-unsorted
+        rm .lfs-assets-id
